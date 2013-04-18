@@ -11,6 +11,7 @@ module Split
     attr_accessor :enabled
     attr_accessor :persistence
     attr_accessor :algorithm
+    attr_accessor :cookie_domain
 
     attr_reader :experiments
 
@@ -161,6 +162,7 @@ module Split
       @db_failover_allow_parameter_override = false
       @allow_multiple_experiments = false
       @enabled = true
+      @cookie_domain = ""
       @experiments = {}
       @persistence = Split::Persistence::SessionAdapter
       @algorithm = Split::Algorithms::WeightedSample
